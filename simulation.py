@@ -33,7 +33,7 @@ class Server:
                 self.current_request = None
 
 def simulateOneServer(filename):
-    requests =
+    requests = []
     with open(filename, 'r') as file:
         reader = csv.reader(file)
         for row in reader:
@@ -42,7 +42,7 @@ def simulateOneServer(filename):
     server = Server()
     current_time = 0
     request_index = 0
-    wait_times =
+    wait_times = []
 
     while request_index < len(requests) or server.is_busy() or not server.queue.empty():
         # Add incoming requests
@@ -70,7 +70,7 @@ def simulateOneServer(filename):
         return 0
 
 def simulateManyServers(filename, num_servers):
-    requests =
+    requests = []
     with open(filename, 'r') as file:
         reader = csv.reader(file)
         for row in reader:
@@ -79,7 +79,7 @@ def simulateManyServers(filename, num_servers):
     servers = [Server() for _ in range(num_servers)]
     current_time = 0
     request_index = 0
-    wait_times =
+    wait_times = []
     server_index = 0
 
     while request_index < len(requests) or any(server.is_busy() or not server.queue.empty() for server in servers):

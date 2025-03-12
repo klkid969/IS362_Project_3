@@ -127,3 +127,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+# Analysis:
+# The simulation results show an average wait time of 0 for all server configurations.
+# This indicates that the requests in requests.csv are being processed immediately upon arrival.
+# The processing times are likely very low, and the arrival times are spaced far enough apart.
+# Further testing with different request patterns and processing times may be needed to observe wait times.
+
+# Analysis:
+# The average wait time is 0 for all server configurations.
+# requests.csv contains bursts of requests arriving at the same time, but also has many large gaps between requests.
+# The processing times are consistently low (1, 2, or 3 seconds).
+# The combination of spaced-out requests and low processing times likely allows the server to process all requests quickly, resulting in no wait times.
+# To generate wait times, a requests.csv file with more consistent bursts of requests and/or longer processing times would be needed.
